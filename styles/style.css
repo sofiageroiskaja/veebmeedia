@@ -1,0 +1,23 @@
+body{
+	background-color: #E2F7F8;
+	color: #000000;
+	font-family: Arial;
+	background-image: url("http://greeny.cs.tlu.ee/~rinde/media/pics/tlu_h200.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
+}
+h1,h2,h3{
+	color: rgb(0,0,190);
+}
+section{
+	background-color: rgba(255,255,255,0.5);
+	background-image: url("http://greeny.cs.tlu.ee/~rinde/media/pics/top_left_01_transparent.png"), url("http://greeny.cs.tlu.ee/~rinde/media/pics/bottom_right_01_transparent.png");
+	background-position: left top, bottom right;
+	background-repeat: no-repeat;
+	background-size: 50px;
+
+}
+nav{
+	/*background-color: hsl(240,80%,80%);*/
+}
