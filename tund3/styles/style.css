@@ -48,7 +48,7 @@ a{
 	color: #000000;
 }
 #stage{
-	width: 610px;
+	width: 580px;
 	height: 350px;
 	position: relative;
 	left: 0px;
@@ -64,8 +64,8 @@ a{
     width: 308px;
     height: 360px;
     /* border: 1px solid teal; */
-    top: -55px;
-    left: 405px;
+    top: -50px;
+    left: 380px;
     transform: scale(.2);
 }
 #wm_body{
@@ -90,6 +90,23 @@ a{
 #wheel2{
 	bottom: -140px;
 	left: 720px;
+}
+#kopter {
+    top: 220px;
+    left: 30px;
+    transform: scale(.25);
+}
+#kopter_body{
+	bottom: 120px;
+	left: -90px;
+}
+#tagarootor{
+	bottom: 290px;
+	left: 50px;
+}
+#rootor{
+	bottom: 280px;
+	left:-110px;
 }
 footer{
 	width: 100%;
