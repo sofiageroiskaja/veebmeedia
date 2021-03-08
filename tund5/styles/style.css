@@ -166,7 +166,7 @@ a{
 
 .pendulus {
 	left: 194px;
-	top: 400px;
+	top: 380px;
 	animation: tik_tak 3s ease-in-out infinite;
 }
 
@@ -226,11 +226,8 @@ footer{
 	100% {transform: rotate(360deg);}
 }
 
+
 @keyframes tik_tak{
-	0%, 100% {
-		transform: rotate(45deg);
-	  }
-	  50% {
-		transform: rotate(-45deg);
-	  }
+	10% {transform: rotate(-32deg);}
+	100%{ transform: rotate(32deg);}
 }
