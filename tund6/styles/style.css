@@ -1,0 +1,243 @@
+body{
+	background-color: #E2F7F8;
+	color: #000000;
+	font-family: Arial;
+	background-image: url("http://greeny.cs.tlu.ee/~rinde/media/pics/tlu_h200.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: scroll;
+	margin: 0px;
+}
+main{
+	margin: 10px;
+}
+
+h1,h2,h3{
+	color: rgb(0,0,0);
+}
+section{
+	background-color: rgba(255,255,255,0.5);
+	background-image: url("../../images/left_top.png"), url("../../images/right_bottom.png"), url("../../images/left_bottom.png"), url("../../images/right_top.png");
+	background-position: left top, bottom right, bottom left, right top;
+	background-repeat: no-repeat;
+	background-size: 50px;
+	background-origin: padding-box;
+	width: 80%;
+	margin: 10px;
+	padding:5px 20px; /*1: koigile; 2: vertikaal horisontaal; 3: uleval horisontaal all; 4: uleval paremal all vasakul*/
+	border: 5px dotted white;
+	min-height: 300px;
+	max-height: 600px;
+	overflow: scroll;
+}
+nav{
+	/*background-color: hsl(240,80%,80%);*/
+	box-sizing: border-box; /*content-box*/
+	width: 400px;
+	margin: 10px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: white;
+}
+a{
+	color: #000000;
+}
+.tlu_logo{
+	float: left;
+	margin-right: 10px;
+}
+.tlu_logo:hover{
+	transform-origin: 20px top;/*top center bottom   left center right   0-100% */
+	transform: scale(0.8) /*rotate(20deg) translate(100px, 20px) skewY(20deg)*/;
+	transition-property: transform /*all   voi komadega eraldes mitu omadust*/;
+	transition-duration: 2s;
+	transition-delay: 2s;
+	transition-timing-function: ease-in-out;
+	/*transition: transform 2s 2s ease-in-out*/
+}
+.photoplace{
+	width: 600px;
+	height: 420px;
+	padding: 0px;
+	position: relative;
+	display: inline-block;
+}
+.fadephoto{
+	transition: opacity 1s;
+	opacity: 0;
+}
+.bot_btn{
+	width: 100px;
+	bottom: 0px;
+	border: #000000 solid 1px;
+	border-radius: 20px;
+	background-color: rgba(255,255,255,0.5);
+}
+.bot_right_btn{
+	right: 0px;
+}
+.stage{
+	width: 580px;
+	height: 350px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	background-image: url(../../images/taeva_osa_veerand.png), url(../../images/maa_osa_veerand.png);
+	background-repeat: no-repeat;
+	background-size: 680px;
+}
+.stage *, .photoplace *{
+	position: absolute;
+}
+.windmill {
+    width: 308px;
+    height: 360px;
+    /* border: 1px solid teal; */
+    top: -75px;
+    left: 380px;
+    transform: scale(.18);
+}
+.wm_body{
+	bottom: 0px;
+}
+.wm_wing{
+	animation: spin 4s linear infinite paused;
+}
+.sun {
+    width: 330px;
+    height: 360px;
+    top: -100px;
+    left: -95px;
+    transform: scale(.4);
+	opacity: 0.85;
+}
+.truck {
+    top: 230px;
+    left: 70px;
+    transform: scale(.1);
+}
+.truck_body{
+	bottom: -100px;
+	left: -85px;
+}
+.wheel2{
+	bottom: -140px;
+	left: 720px;
+}
+.kopter {
+    top: 100px;
+    left: 400px;
+    transform: scale(.25) rotate(-10deg);
+}
+.kopter_body{
+	bottom: 120px;
+	left: -90px;
+}
+.tagarootor{
+	bottom: 290px;
+	left: 50px;
+}
+.rootor{
+	bottom: 280px;
+	left:-110px;
+}
+.gorilla {
+    top: -25px;
+    left: -5px;
+    transform: scale(.3);
+}
+#tik_tak{
+	margin-bottom: 70px;
+}
+.clock_area {
+	width: 272px;
+	height: 473px;
+	padding: 10px
+}
+.clock {
+	position: relative;
+	width: 554px;
+	height: 945px;
+	transform-origin: 0% 0%;
+	transform: scale(.5);
+}
+.clock * {
+	position: absolute;
+}
+.clockface {
+	width: 369px;
+	height: 369px;
+	left: 92px;
+	top: 90px;
+}
+.clockhand {
+	left: 158px;
+	top: 10px;
+	transform-origin: 50% 176px;
+}
+.pendulus {
+	left: 194px;
+	top: 400px;
+	animation: tik_tak 3s ease-in-out infinite;
+}
+#hourhand{
+	animation: spin 43200s linear infinite;
+}
+#minutehand{
+	animation: spin 3600s infinite steps(60);
+}
+#secondhand{
+	animation: spin 60s infinite steps(60);
+}
+.ruut{
+	top: -85px;
+	left: -30px;
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	animation-name: ruuduliikumine;
+	animation-duration: 4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 3s;
+	animation-iteration-count: 3;/*infinite*/
+	animation-direction: alternate;
+	animation-fill-mode: both;
+	animation-play-state: running;
+}
+.smoke{
+	width: 100px;
+	height: 100px;
+	top: -50px;
+	left: -145px;
+	animation: smoking 3s ease-out infinite reverse;
+}
+footer{
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+}
+
+@keyframes ruuduliikumine{
+	0% {transform: translate(410px, 130px);}
+	100% {transform: translate(150px, 160px); background-color:red;}
+}
+
+@keyframes smoking{
+	0% {transform: translate(-800px, -400px) scale(5); opacity: 0;}
+	100% {transform: translate(0px, 0px) scale(.5); opacity: 1;}
+}
+
+@keyframes spin{
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+
+@keyframes tik_tak{
+	10% {transform: rotate(-32deg);}
+	100%{ transform: rotate(32deg);}
+}

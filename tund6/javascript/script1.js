@@ -1,0 +1,104 @@
+let message = "Töötab!";
+let picUrl = "../../../~rinde/media/photos/TLU_600x400/";
+let picNamePrefix = "tlu_";
+let picExt = ".jpg";
+let minPicNum = 1;
+let maxPicNum = 43;
+let picNum = 1;
+let picChange = 0;
+
+window.onload = function() {
+    // alert(message);
+    console.log("Sõnum on: " + message);
+    putOpenTime();
+    putRandomPic();
+    clockTick();
+    setButtons();
+}
+
+function putOpenTime() {
+    let currentTime = new Date();
+    let currentHour = currentTime.getHours();
+    let currentMinutes = currentTime.getMinutes();
+    let currentSeconds = currentTime.getSeconds();
+    document.getElementById("open_message").innerHTML = "Leht avati kell " + currentHour + ":" + currentMinutes + ":" + currentSeconds + ".";
+}
+
+function putRandomPic() {
+    let randomNum = minPicNum + Math.round(Math.random() * (maxPicNum - minPicNum));
+    picNum = randomNum;
+    putPhoto();
+}
+
+function putPhoto(){
+    document.getElementById("nextphoto").disabled = true;
+    document.getElementById("prevphoto").disabled = true;
+    if(picChange%2 == 0){
+        document.getElementById("tlu_pic2").src = picUrl + picNamePrefix + picNum + picExt;
+        document.getElementById("tlu_pic2").style.opacity = 1;
+    } else{
+        document.getElementById("tlu_pic").src = picUrl + picNamePrefix + picNum + picExt;
+        document.getElementById("tlu_pic2").style.opacity = 0;
+    }
+    picChange ++;
+}
+
+function clockTick() {
+    let currentTime = new Date();
+    let currentHour = currentTime.getHours();
+    let currentMinutes = currentTime.getMinutes();
+    let currentSeconds = currentTime.getSeconds();
+    let secAngle = currentSeconds * 6;
+    document.getElementById("secondhand").style.transform = "rotate(" + secAngle + "deg)";
+    requestAnimationFrame(clockTick);
+}
+
+function setButtons(){
+    document.getElementById("nextphoto").addEventListener("click", nextPhoto);
+    document.getElementById("prevphoto").addEventListener("click", prevPhoto);
+    //panen foto opacity siirde loppu kuulama
+    document.getElementById("tlu_pic2").addEventListener("transitionend", enableButtons);
+    document.getElementById("animBtn").addEventListener("click", toggleAnim);
+    document.getElementById("stage").addEventListener("animationstart", animInfo);
+    document.getElementById("stage").addEventListener("animationend", animInfo);
+}
+
+function animInfo(e){
+    console.log(e);
+}
+function toggleAnim(){
+    let allitems = document.getElementById("stage").getElementsByTagName("*");
+    if(document.getElementById("animBtn").innerHTML == "Kaivita animatsioon"){
+        document.getElementById("animBtn").innerHTML = "Peata animatsioon";
+        document.getElementById("wm_wing").style.animationPlayState = "running";
+        for(let i = 0; i < allitems.length; i ++){
+            allitems[i].style.animationPlayState = "running";
+        }
+    } else{
+        document.getElementById("animBtn").innerHTML = "Kaivita animatsioon";
+        document.getElementById("wm_wing").style.animationPlayState = "paused";
+        for(let i = 0; i < allitems.length; i ++){
+            allitems[i].style.animationPlayState = "paused";
+        }
+    }
+}
+
+function enableButtons(){
+    document.getElementById("nextphoto").disabled = false;
+    document.getElementById("prevphoto").disabled = false;
+}
+
+function nextPhoto(){
+    picNum ++;
+    if (picNum > maxPicNum){
+        picNum = minPicNum;
+    }
+    putPhoto();
+}
+function prevPhoto(){
+    picNum --;
+    if (picNum < minPicNum){
+        picNum = maxPicNum;
+    }
+    putPhoto();
+}
