@@ -56,11 +56,13 @@ function clockTick() {
 function setButtons(){
     document.getElementById("nextphoto").addEventListener("click", nextPhoto);
     document.getElementById("prevphoto").addEventListener("click", prevPhoto);
-    //panen foto opacity siirde loppu kuulama
     document.getElementById("tlu_pic2").addEventListener("transitionend", enableButtons);
     document.getElementById("animBtn").addEventListener("click", toggleAnim);
     document.getElementById("stage").addEventListener("animationstart", animInfo);
     document.getElementById("stage").addEventListener("animationend", animInfo);
+    document.getElementById("myanim").addEventListener("animationstart", animStart);
+    document.getElementById("myanim").addEventListener("animationiteration", animRepeat);
+    document.getElementById("myanim").addEventListener("animationend", animEnd);
 }
 
 function animInfo(e){
@@ -101,4 +103,20 @@ function prevPhoto(){
         picNum = maxPicNum;
     }
     putPhoto();
+}
+
+function myAnim() {
+    document.getElementById("myanim").style.animation = "myanimation 4s 2";     
+}
+
+function animStart() {
+    console.log("started");
+}
+  
+function animRepeat() {
+    console.log("repeat");
+}
+  
+function animEnd() {
+    console.log("completed");
 }

@@ -4,7 +4,12 @@
 	<title>Sofia teeb veebi</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<script src="javascript/script1.js" defer></script>
+	<script type="text/javascript" src="javascript/script1.js" defer></script>
+	<script>
+	function myAnim() {
+    	document.getElementById("myanim").style.animation = "myanimation 4s 2";     
+	}
+	</script>
 </head>
 <body>
 	<main>
@@ -111,8 +116,8 @@ quivis antiburschius,
 			<h3>Pildid</h3>
 			<p>Kui pilt on lihtsalt illustratsioon - näiteks bänner</p>
 			<div class="photoplace">
-				<img id="tlu_pic" src="../../../~rinde/media/photos/loading_600x400.png"  alt="Tallinna Ülikool">
-				<img id="tlu_pic2" class="fadephoto" src="../../../~rinde/media/photos/loading_600x400.png"  alt="Tallinna Ülikool">
+				<img id="tlu_pic" src="../../../~rinde/media/photos/loading_600x400.png" alt="Tallinna Ülikool">
+				<img id="tlu_pic2" class="fadephoto" src="../../../~rinde/media/photos/loading_600x400.png" alt="Tallinna Ülikool">
 				<button id="prevphoto" class="bot_btn">Eelmine foto</button>
 				<button id="nextphoto" class="bot_btn bot_right_btn">Järgmine foto</button>
 			</div>
@@ -200,6 +205,10 @@ quivis antiburschius,
 					<img src="../images/clock_frame.png" alt="kellakasti raam">
 				  </div>
 				  </div>
+			</section>
+			<section id="anim2" class="anim2">
+				<h2>Minu teine animatsioon</h2>
+				<div id="myanim" class="myanim" onclick="myAnim()">Click me</div>
 			</section>
 		<footer>
 			<p>Leht lõppeb siin</p>
