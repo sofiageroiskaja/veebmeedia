@@ -26,6 +26,7 @@ section{
 	margin: 10px;
 	padding:5px 20px; /*1: koigile; 2: vertikaal horisontaal; 3: uleval horisontaal all; 4: uleval paremal all vasakul*/
 	border: 5px dotted white;
+	min-width: 100px;
 	min-height: 300px;
 	max-height: 600px;
 	overflow: scroll;
@@ -102,7 +103,7 @@ a{
 	bottom: 0px;
 }
 .wm_wing{
-	animation: spin 4s linear infinite paused;
+	animation: spin 4s linear infinite reverse;
 }
 .sun {
     width: 330px;

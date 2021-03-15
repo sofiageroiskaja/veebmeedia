@@ -30,13 +30,13 @@ function putRandomPic() {
     putPhoto();
 }
 
-function putPhoto(){
+function putPhoto() {
     document.getElementById("nextphoto").disabled = true;
     document.getElementById("prevphoto").disabled = true;
-    if(picChange%2 == 0){
+    if (picChange % 2 == 0) {
         document.getElementById("tlu_pic2").src = picUrl + picNamePrefix + picNum + picExt;
-        document.getElementById("tlu_pic2").style.opacity = 1;
-    } else{
+        document.getElementById("tlu_pic2").style.opacity = 1; 
+    } else {
         document.getElementById("tlu_pic").src = picUrl + picNamePrefix + picNum + picExt;
         document.getElementById("tlu_pic2").style.opacity = 0;
     }
@@ -49,8 +49,7 @@ function clockTick() {
     let currentMinutes = currentTime.getMinutes();
     let currentSeconds = currentTime.getSeconds();
     let secAngle = currentSeconds * 6;
-    document.getElementById("secondhand").style.transform = "rotate(" + secAngle + "deg)";
-    requestAnimationFrame(clockTick);
+    document.getElementById("secondhand").style.transform = "rotate(" + secAngle +"deg)";
 }
 
 function setButtons(){
@@ -60,6 +59,7 @@ function setButtons(){
     document.getElementById("animBtn").addEventListener("click", toggleAnim);
     document.getElementById("stage").addEventListener("animationstart", animInfo);
     document.getElementById("stage").addEventListener("animationend", animInfo);
+    document.getElementById("stage").addEventListener("animationiteration", animInfo);
     document.getElementById("myanim").addEventListener("animationstart", animStart);
     document.getElementById("myanim").addEventListener("animationiteration", animRepeat);
     document.getElementById("myanim").addEventListener("animationend", animEnd);
@@ -68,19 +68,18 @@ function setButtons(){
 function animInfo(e){
     console.log(e);
 }
-function toggleAnim(){
-    let allitems = document.getElementById("stage").getElementsByTagName("*");
-    if(document.getElementById("animBtn").innerHTML == "Kaivita animatsioon"){
+
+function toggleAnim() {
+    let allItems = document.getElementById("stage").getElementsByTagName("*");
+    if (document.getElementById("animBtn").innerHTML == "Käivita animatsioon") {
         document.getElementById("animBtn").innerHTML = "Peata animatsioon";
-        document.getElementById("wm_wing").style.animationPlayState = "running";
-        for(let i = 0; i < allitems.length; i ++){
-            allitems[i].style.animationPlayState = "running";
+        for (let i = 0; i < allItems.length; i++) {
+            allItems[i].style.animationPlayState = "running";
         }
-    } else{
-        document.getElementById("animBtn").innerHTML = "Kaivita animatsioon";
-        document.getElementById("wm_wing").style.animationPlayState = "paused";
-        for(let i = 0; i < allitems.length; i ++){
-            allitems[i].style.animationPlayState = "paused";
+    } else {
+        document.getElementById("animBtn").innerHTML = "Käivita animatsioon"
+        for (let i = 0; i < allItems.length; i++) {
+            allItems[i].style.animationPlayState = "paused";
         }
     }
 }
@@ -90,16 +89,17 @@ function enableButtons(){
     document.getElementById("prevphoto").disabled = false;
 }
 
-function nextPhoto(){
+function nextPhoto() {
     picNum ++;
-    if (picNum > maxPicNum){
+    if (picNum > maxPicNum) {
         picNum = minPicNum;
     }
     putPhoto();
 }
-function prevPhoto(){
+
+function prevPhoto() {
     picNum --;
-    if (picNum < minPicNum){
+    if (picNum < minPicNum) {
         picNum = maxPicNum;
     }
     putPhoto();
