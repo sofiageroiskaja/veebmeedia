@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/animation.css">
+	<link rel="stylesheet" type="text/css" href="styles/alarm.css">
+
 	<script src="javascript/script1.js" defer></script>
 	<script src="javascript/music_7.js" defer></script>
 	<script src="javascript/clock_7.js" defer></script>
+	<script src="javascript/alarm.js" defer></script>
 
 	<script>
 	function myAnim() {
@@ -231,6 +234,31 @@ quivis antiburschius,
 					</div>
 					<img src="../images/clock_frame.png" alt="kellakasti raam">
 				  </div>
+				</div>
+			</section>
+			<section id="alarm" class="alarm">
+				<div id='main-container'>
+					<h2 id='alarm_txt'></h2>
+				</div>
+		
+				<div id='set_alarm'>
+					<h3>Äratuskell</h3>
+						<label for="alarmhrs">Tunnid: </label>
+							<select id='alarmhrs'></select>
+						<label for="alarmmins">Minutid: </label>
+							<select id='alarmmins'></select>
+						<label for="alarmsecs">Sekundid: </label>
+							<select id='alarmsecs'></select>
+				</div>
+		
+				<div id='alarm_buttons'>
+					<div>
+						<button  id='set_btn' onClick='setAlarm()'>Set Alarm</button>
+					</div>
+		
+					<div>
+						<button  id='reset_btn' onClick='resetAlarm()'>Reset Alarm</button>
+					</div>
 				</div>
 			</section>
 			<section id="anim2" class="anim2">

@@ -4,8 +4,9 @@ let time_words = [];
 let bell = new Audio();
 
 function initClock() {
-    clockTick();
     document.getElementById("clock_speak_btn").addEventListener("click", tellTime);
+    bell.src = sound_url + "kell.mp3";
+    clockTick();
 }
 
 function clockTick() {
@@ -19,12 +20,9 @@ function clockTick() {
     document.getElementById("secondhand").style.transform = "rotate(" + sec_angle +"deg)";
     document.getElementById("minutehand").style.transform = "rotate(" + min_angle +"deg)";
     document.getElementById("hourhand").style.transform = "rotate(" + hour_angle +"deg)";
-    if(current_minutes == 32 && current_seconds == 0 && current_time.getMilliseconds() < 1000/60){
-		if(document.getElementById("allow_bell_btn").checked){
-            bell.src = sound_url + "kell.mp3";
-            bell.play();
-        }
-	}
+    if (current_minutes == 34 && current_seconds == 0 && current_time.getMilliseconds() < 1000 / 60 && document.getElementById("allow_bell_btn").checked) {
+        bell.play();
+    }
 }
 
 function tellTime() {
