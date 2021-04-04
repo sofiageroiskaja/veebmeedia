@@ -1,11 +1,11 @@
 let sound_url = "http://greeny.cs.tlu.ee/~rinde/media/sounds/kellaheli/";
 let clock_speaker = new Audio();
 let time_words = [];
-let bell = new Audio();
+var bell = new Audio("kell.mp3")
+var checkbox = document.getElementById("allow_bell_btn");
 
 function initClock() {
     document.getElementById("clock_speak_btn").addEventListener("click", tellTime);
-    bell.src = sound_url + "kell.mp3";
     clockTick();
 }
 
@@ -20,10 +20,12 @@ function clockTick() {
     document.getElementById("secondhand").style.transform = "rotate(" + sec_angle +"deg)";
     document.getElementById("minutehand").style.transform = "rotate(" + min_angle +"deg)";
     document.getElementById("hourhand").style.transform = "rotate(" + hour_angle +"deg)";
-    if (current_minutes == 34 && current_seconds == 0 && current_time.getMilliseconds() < 1000 / 60 && document.getElementById("allow_bell_btn").checked) {
-        bell.play();
-    }
-}
+
+    checkbox.addEventListener("change", function(e) {
+        if (this.checked && current_minutes == 24 && current_seconds == 20 && currenttime.getMilliseconds() < 1000/60) {
+            bell.play();
+        }
+});}
 
 function tellTime() {
     time_words.push("kellon");
