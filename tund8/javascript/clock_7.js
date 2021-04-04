@@ -2,70 +2,74 @@ let sound_url = "http://greeny.cs.tlu.ee/~rinde/media/sounds/kellaheli/";
 let clock_speaker = new Audio();
 let time_words = [];
 let bell = new Audio();
-let prev_hour;
 
-function initClock(){
-    document.getElementById("clock_speak_btn").addEventListener("click", tell_time);
-    bell.src = sound_url + "kell.mp3";
-    prev_hour = new Date().getHours();
+function initClock() {
     clockTick();
+    document.getElementById("clock_speak_btn").addEventListener("click", tellTime);
 }
 
 function clockTick() {
-    let currentTime = new Date();
-    let currentHour = currentTime.getHours();
-    let currentMinutes = currentTime.getMinutes();
-    let currentSeconds = currentTime.getSeconds();
-    let secAngle = currentSeconds * 6;
-    document.getElementById("secondhand").style.transform = "rotate(" + secAngle +"deg)";
-    //kas lüüa kella
-    //kavalam on kontrollida, kas document.getElementById("allow_bell_button").checked ja tundide arv erineb eelmise tsükli tundidest
-    // if(currentminute == 0 && currentsecond == 0 && currenttime.getmiliseconds() < 1000/60 && document.getElementById("allow_bell_button").checked){
-        //loendur, mitu korda vaja lüüa
-    //}
+    let current_time = new Date();
+    let current_hour = current_time.getHours();
+    let current_minutes = current_time.getMinutes();
+    let current_seconds = current_time.getSeconds();
+    let sec_angle = current_seconds * 6;
+    let min_angle = current_minutes * 6 + (sec_angle / 60);
+    let hour_angle = current_hour * 30 + (min_angle / 12);
+    document.getElementById("secondhand").style.transform = "rotate(" + sec_angle +"deg)";
+    document.getElementById("minutehand").style.transform = "rotate(" + min_angle +"deg)";
+    document.getElementById("hourhand").style.transform = "rotate(" + hour_angle +"deg)";
+    if(current_minutes == 32 && current_seconds == 0 && current_time.getMilliseconds() < 1000/60){
+		if(document.getElementById("allow_bell_btn").checked){
+            bell.src = sound_url + "kell.mp3";
+            bell.play();
+        }
+	}
 }
 
-function tell_time(){
+function tellTime() {
     time_words.push("kellon");
-    let currentTime = new Date();
-    num_to_words(currentTime.getHours());
+    let current_time = new Date();
+    num_to_words(current_time.getHours());
     time_words.push("ja");
-    num_to_words(currentTime.getMinutes());
-    if(currentTime.getMinutes() == 1){
+    num_to_words(current_time.getMinutes());
+    if (current_time.getMinutes() == 1) {
         time_words.push("minut");
-    } else{
+    } else {
         time_words.push("minutit");
     }
-    //console.log(time_words);
-    document.getElementById("clock_speak_btn").removeEventListener("click", tell_time);
+    // console.log(time_words);
+    document.getElementById("clock_speak_btn").removeEventListener("click", tellTime);
     document.getElementById("clock_speak_btn").disabled = true;
-    clock_speaker.addEventListener("ended", speak_time);
-    speak_time();
+    clock_speaker.addEventListener("ended", speakTime);
+    speakTime();
 }
 
-function speak_time(){
-    if(time_words.length > 0){
+function speakTime() {
+    if (time_words.length > 0) {
         clock_speaker.src = sound_url + time_words[0] + ".mp3";
         clock_speaker.play();
         time_words.shift();
-    } else{
-        clock_speaker.addEventListener("ended", speak_time);
+    } else {
+        clock_speaker.removeEventListener("ended", speakTime);
+        document.getElementById("clock_speak_btn").disabled = false;
+        document.getElementById("clock_speak_btn").addEventListener("click", tellTime);
     }
 }
 
-function num_to_words(num_value){
-    if(num_value <= 10){
+function num_to_words(num_value) {
+    if (num_value <= 10) {
         time_words.push(num_value);
-    } else{
+    } else {
         let tens = Math.floor(num_value / 10);
         let ones = num_value % 10;
-        if(tens == 1){
+        if (tens == 1) {
             time_words.push(ones);
             time_words.push("teist");
-        } else{
+        } else {
             time_words.push(tens);
-            time_words.push("kümmend");
-            if(ones > 0){
+            time_words.push("kymmend");
+            if (ones > 0) {
                 time_words.push(ones);
             }
         }
