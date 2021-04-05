@@ -11,7 +11,6 @@ window.onload = function() {
     console.log("Sõnum on: " + message);
     putOpenTime();
     putRandomPic();
-    clockTick();
     initClock(); //clock_7.js
     setButtons();
     prepare_audio(); //music_7.js

@@ -1,11 +1,13 @@
 let sound_url = "http://greeny.cs.tlu.ee/~rinde/media/sounds/kellaheli/";
 let clock_speaker = new Audio();
 let time_words = [];
-var bell = new Audio("kell.mp3")
-var checkbox = document.getElementById("allow_bell_btn");
+var bell = new Audio();
+let prev_hour;
 
 function initClock() {
     document.getElementById("clock_speak_btn").addEventListener("click", tellTime);
+    bell.src = sound_url + "kell.mp3";
+    prev_hour = new Date().getHours();
     clockTick();
 }
 
@@ -20,12 +22,26 @@ function clockTick() {
     document.getElementById("secondhand").style.transform = "rotate(" + sec_angle +"deg)";
     document.getElementById("minutehand").style.transform = "rotate(" + min_angle +"deg)";
     document.getElementById("hourhand").style.transform = "rotate(" + hour_angle +"deg)";
-
-    checkbox.addEventListener("change", function(e) {
-        if (this.checked && current_minutes == 24 && current_seconds == 20 && currenttime.getMilliseconds() < 1000/60) {
-            bell.play();
+    //kas lüüa kella
+    if (document.getElementById("allow_bell_btn").checked && current_hour != prev_hour) {
+        let hr_time = 0; let count = 0;
+        if(current_hour == 0){
+            hr_time = 12;
+        } else if (current_hour > 0 && current_hour < 13) {
+            hr_time = current_hour;
+        } else {
+            hr_time = current_hour - 12;
         }
-});}
+
+        bell.play(); count++;
+        bell.onended = function() {
+            if (count < hr_time) {
+                bell.play(); count++;
+            }
+        }
+        prev_hour = current_hour;
+    }
+}
 
 function tellTime() {
     time_words.push("kellon");
