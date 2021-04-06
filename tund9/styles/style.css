@@ -1,0 +1,153 @@
+body{
+	background-color: #bcf5ff;
+	color: #000000;
+	background-image: url("http://greeny.cs.tlu.ee/~rinde/media/pics/tlu_h200.png");
+	background-repeat: repeat-y;
+	background-position: right top;
+	background-attachment: scroll;
+	margin: 0;
+}
+header{
+	margin-left: 15px;
+}
+h1{
+	font-family: 'Trocchi', serif;
+	font-size: 45px;
+	font-weight: normal;
+	line-height: 50px;
+}
+h2{ 
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 30px;
+}
+h3{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 26px;
+}
+p, ol, dl{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+}
+figcaption{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+}
+a{
+	display: inline;
+	color: #258f8f;
+	text-decoration: none;
+}
+a:hover{
+	color: rgb(88, 171, 173);
+}
+section{
+	background-color: #dffaff;
+	background-image: url("../../images/left_top.png"), url("../../images/right_bottom.png"), url("../../images/left_bottom.png"), url("../../images/right_top.png");
+	background-position: left top, bottom right, bottom left, right top;
+	background-repeat: no-repeat;
+	background-size: 50px;
+	background-origin: padding-box;
+	width: 80%;
+	padding:5px 20px; /*1: koigile; 2: vertikaal horisontaal; 3: uleval horisontaal all; 4: uleval paremal all vasakul*/
+	border: 2px solid #000000;
+	min-width: 100px;
+	min-height: 300px;
+	max-height: 600px;
+	overflow: scroll;
+	margin: 15px;
+}
+nav{
+	margin-left: 15px;
+}
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #a3f0fd;
+	top: 0;
+	width: 84%;
+}
+nav li{
+	float: left;
+}
+nav li a{
+	display: block;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 10px 15px;
+	text-decoration: none;
+}
+nav li a:hover {
+	background-color: #a3f0fd;
+}
+.tlu_logo{
+	float: left;
+	margin-right: 10px;
+	width: 50vw;
+	height: 33vh;
+}
+.tlu_logo:hover{
+	/*transform-origin: 20px top;/*top center bottom   left center right   0-100%
+	transform: scale(0.8) rotate(20deg) translate(100px, 20px) skewY(20deg);
+	transition-property: transform all   voi komadega eraldes mitu omadust;
+	transition-duration: 2s;
+	transition-delay: 2s;
+	transition-timing-function: ease-in-out;
+	transition: transform 2s 2s ease-in-out;*/
+}
+.photoplace{
+	width: 600px;
+	height: 420px;
+	padding: 0px;
+	position: relative;
+	display: inline-block;
+}
+.fadephoto{
+	transition: opacity 1s;
+	opacity: 0;
+}
+.bot_btn{
+	width: 100px;
+	bottom: 0px;
+	border: #000000 solid 1px;
+	border-radius: 20px;
+	background-color: rgb(255, 255, 255);
+}
+.bot_right_btn{
+	right: 0px;
+}
+.stage{
+	width: 580px;
+	height: 350px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	background-image: url(../../images/taeva_osa_veerand.png), url(../../images/maa_osa_veerand.png);
+	background-repeat: no-repeat;
+	background-size: 680px;
+}
+.stage *, .photoplace *{
+	position: absolute;
+}
+footer{
+	width: 100%;
+	height: 50px;
+	background-color: rgb(255, 255, 255);
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	text-align: center;
+}
+canvas{
+	background-color: white;
+	border: 1px solid black;
+}
+#graphics{
+	margin-bottom: 70px;
+}
