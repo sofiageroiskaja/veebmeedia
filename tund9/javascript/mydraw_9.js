@@ -4,33 +4,34 @@ let context;
 function init_mydraw(){
     mycanvas = document.getElementById("mycanvas");
     context = mycanvas.getContext("2d");
-    bubbles = [];
-    r = 30;
 
     draw_fish1();
     draw_fish2();
 }
 
 function draw_fish1(){
+    context.strokeStyle = "black";
     context.beginPath();
         context.lineWidth=3;
 
-        context.moveTo(100, 150);
-        context.bezierCurveTo(120, 70, 240, 160, 360, 90);
+        context.moveTo(100, 300);
+        context.bezierCurveTo(130, 200, 230, 330, 360, 250);
               
-        context.moveTo(100, 150);
-        context.bezierCurveTo(120, 220, 240, 140, 360, 205);
+        context.moveTo(100, 300);
+        context.bezierCurveTo(130, 380, 230, 300, 360, 365);
               
-        context.moveTo(361, 88);
-        context.quadraticCurveTo(360, 120, 320, 150);
-        context.moveTo(361, 207);
-        context.quadraticCurveTo(350, 155, 320, 150);
+        context.moveTo(361, 250);
+        context.quadraticCurveTo(360, 250, 330, 310);
+        context.moveTo(361, 365);
+        context.quadraticCurveTo(360, 360, 328, 310);
               
-        context.moveTo(135, 135);
-        context.arc(135, 135, 5, 0, 2*Math.PI);
-        context.moveTo(100, 150);
-        context.lineTo(110, 150);
+        context.moveTo(130, 285);
+        context.arc(130, 285, 6, 0, 2*Math.PI);
+        context.moveTo(100, 300);
+        context.lineTo(110, 300);
         context.stroke();
+
+
     context.closePath();
 }
 
