@@ -148,6 +148,9 @@ canvas{
 	background-color: white;
 	border: 1px solid black;
 }
-#graphics{
+#mygraphics{
 	margin-bottom: 70px;
+}
+#mycanvas{
+	background-color: #0090fc;
 }

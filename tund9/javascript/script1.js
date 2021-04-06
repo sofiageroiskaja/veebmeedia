@@ -15,6 +15,7 @@ window.onload = function() {
     setButtons();
     prepare_audio(); //music_7.js
     init_draw();
+    init_mydraw();
 }
 
 function putOpenTime() {
