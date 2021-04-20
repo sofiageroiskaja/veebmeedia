@@ -1,0 +1,61 @@
+body {
+	background: #33c5c5;
+    perspective: 1000px;
+}
+
+.area {
+	margin-top: 250px;
+}
+
+.dice {
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+	width: 200px;
+	transform-style: preserve-3d;
+	animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+@keyframes spin {
+	0% {
+		transform: rotateX(360deg) rotateY(360deg) translateZ(0px);
+	}
+}
+
+img {
+	width: 100%;
+}
+
+.side {
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	opacity: .9;
+}
+
+.one {
+    transform: translateZ(100px);
+}
+
+.two {
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.three {
+    transform: translateY(-100px) rotateX(90deg) scale(.98);
+}
+
+.four {
+    transform: translateY(100px) rotateX(-90deg) scale(.99);
+}
+
+.five {
+    transform: translateX(100px) rotateY(90deg);
+}
+
+.six {
+    transform: translateX(-100px) rotateY(-90deg);
+}
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia teeb veebi</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+	<script src="javascript/artboard.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+			<h1>Veeb ja meedia elemendid</h1>
+			<p>See veebileht on loodud õppetöö raames ja ei sisalda mõistlikku sisu</p>
+			<p id="open_message">Pole miskit sõnumit</p>
+		</header>
+
+        <section id="artboard">
+            <h2>Joonistamine</h2>
+            <canvas id="canvas" width="960" height="540">Kahjuks teie brauser ei toeta HTML5 canvas elementi</canvas>
+            <br>
+            <input type="color" id="drawing_color">
+			<label for="line_width">Joone paksus</label><input id="line_width" type="number" min="1" max="100" value="1">
+			<a download="drawing.png" href="" id="save_pic">Salvesta pilt</a>
+        </section>
+
+        <footer>
+			<p>Sofia Geroiskaja 2021</p>
+		</footer>
+    </main>
+    
+</body>
+</html>
