@@ -1,0 +1,21 @@
+body{
+	background: none;
+	background-color: #bcf5ff;
+}
+header{
+	margin-left: 15px;
+}
+section{
+	background: none;
+	background-color: #dffaff;
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #000000;
+	overflow: scroll;
+}
+.tlu_logo{
+	float: left;
+	margin-right: 10px;
+	width: 50vw;
+	height: 33vh;
+}

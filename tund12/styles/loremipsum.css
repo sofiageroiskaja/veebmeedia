@@ -1,0 +1,111 @@
+body{
+    background-color: #DDFFDD;
+    font-family:Verdana, Tahoma, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    margin: 20px;
+    width: 80%;
+
+    /*peatukkide loendur*/
+    counter-reset: chapter-counter;
+}
+
+/*otsene sisaldumine*/
+section>img{
+    border: 4px solid #99FF99;
+}
+
+h2{
+    counter-increment: chapter-counter;
+}
+
+/*jargnevus*/
+figure+p, figure+p+p{
+    color: #009900;
+}
+
+h3{
+    counter-increment: subchapter;
+}
+
+h3+p+figure img{
+    border-radius: 20px;
+}
+
+h3~p{
+    text-indent: 1cm;
+}
+
+/*atribuutide jargi*/
+/*olemasolu*/
+[title]{
+    background-color: white;
+}
+
+/*tapne vaartus*/
+[title="selgitus"]{
+    font-weight: bold;
+}
+
+/*vaartus algab kindla fraasiga*/
+[id^="chapter"]{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+/*sisaldab fraas *=     loppeb fraasiga $=    */
+
+:lang(en){
+    font-style: oblique;
+}
+
+/*   a:link    a:hover     a:visited    a:active   */
+
+section:target{
+    background-color: rgb(255, 255, 118);
+}
+
+p:first-child{
+    font-weight: 900;
+    font-style: oblique;
+}
+
+/*last-child   p:first-of-type   p:last-of-type*/
+
+section{
+    border: 5px solid gray;
+    counter-reset: subchapter;
+}
+
+section:first-of-type{
+    border-radius: 20px 20px 0px 0px;
+}
+
+section:last-of-type{
+    border-radius: 0px 0px 20px 20px;
+}
+
+section:nth-of-type(2){
+    background-color: #FAFAFA;
+}
+
+section:nth-of-type(even){
+    border-style: dotted;
+}
+
+h2::before{
+    content: url(http://greeny.cs.tlu.ee/~rinde/media/bullet/tlu_bullet.png) "Peatukk " counter(chapter-counter) ": " open-quote;
+}
+
+h2::after{
+    content: close-quote;
+}
+
+h3::before{
+    content: "Alapeatukk: " counter(chapter-counter) "." counter(subchapter) ": " open-quote;
+}
+
+h3::after{
+    content: close-quote;
+}

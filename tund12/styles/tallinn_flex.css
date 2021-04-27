@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+/*viewport toi uued mootuhikud vw     1% viewport laiusest     vh
+vmin 1% vaateava vaiksemast servast    vmax */
+body{
+    background-color: #FAFAFA;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+main{
+    width: 95vw;
+}
+
+section{
+    border: 2px solid salmon;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+img{
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+
+.flex_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex_item{
+    flex-basis: 400px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 100%;
+    min-width: 200px;
+    margin: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.wider{
+    flex-basis: 800px;
+    flex-grow: 2;
+    flex-shrink: 2;
+}
