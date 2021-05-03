@@ -1,0 +1,49 @@
+h1, h2{
+    text-align: center;
+    color: rgb(20, 20, 20);
+}
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+section{
+	width: 80%;
+	margin: 0 auto;
+	line-height: 0;
+	position: relative;
+    margin-bottom: 50px;
+}
+
+section img{
+	width: 100%;
+}
+
+section article{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background: white;
+	display: grid;
+	grid-gap: 20px;
+	mix-blend-mode: lighten;
+}
+
+section div{
+	background: black;
+	height: 25vw;
+    border: 2px solid rgb(255, 0, 85);
+}
+
+#pic1 div:nth-of-type(2){
+	grid-column: 2/4;
+}
+
+#pic2 div:nth-of-type(2){
+	grid-column: 2/3;
+}
