@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia teeb veebi</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+	<script src="javascript/game.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+			<h1>Sofia's Game</h1>
+		</header>
+		<audio src="../sounds/gamestart.mp3" id="gamestart"></audio>
+		<audio src="../sounds/reward.mp3" id="reward"></audio>
+		<audio src="../sounds/gameend.mp3" id="gameend"></audio>
+		<div id="controls">
+			<label for="bg_music">Background music: </label>
+			<audio src="../sounds/bgmusic.mp3" controls></audio>
+			<br>
+			<button id="start_btn" onclick="init_game()">Start game</button>
+			<button id="reset_btn" onclick="reset_game()">Reset game</button> 
+		</audio>
+		</div>
+
+        <section id="game">
+			<h3>Hit the balls in order of the alphabet</h3>
+			<p id="score">Score: 0</p>
+			<p id="timer">You have: 60 seconds left</p>
+			<canvas id="canvas" width="900" height="500">Kahjuks Teie brauser ei toeta HTML5 canvas elementi!</canvas>
+		</section>
+		
+        <footer>
+			<p>Sofia Geroiskaja 2021</p>
+		</footer>
+    </main>
+</body>
+</html>
