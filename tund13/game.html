@@ -15,7 +15,7 @@
 		</header>
 		<audio src="../sounds/gamestart.mp3" id="gamestart"></audio>
 		<audio src="../sounds/reward.mp3" id="reward"></audio>
-		<audio src="../sounds/gameend.mp3" id="gameend"></audio>
+		<audio src="../sounds/gamewin.mp3" id="gamewin"></audio>
 		<div id="controls">
 			<label for="bg_music">Background music: </label>
 			<audio src="../sounds/bgmusic.mp3" controls></audio>
@@ -28,7 +28,7 @@
         <section id="game">
 			<h3>Hit the balls in order of the alphabet</h3>
 			<p id="score">Score: 0</p>
-			<p id="timer">You have: 60 seconds left</p>
+			<p>You have: <span id="time">60</span> seconds left!</p>
 			<canvas id="canvas" width="900" height="500">Kahjuks Teie brauser ei toeta HTML5 canvas elementi!</canvas>
 		</section>
 		

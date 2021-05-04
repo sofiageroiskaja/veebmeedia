@@ -4,16 +4,13 @@ let ball_list = [];
 let elements_limit = 10;
 let game_alphabet = [];
 let hit_count = 0;
+let miss_count = 0;
 let start_audio = document.getElementById("gamestart"); 
 let reward_audio = document.getElementById("reward"); 
 let win_audio = document.getElementById("gamewin");
-let lost_audio = document.getElementById("gamelost");
-let timer; 
-let time_left = 60;
+var timer; 
+var timeLeft = 60; 
 
-//lugeda ka valesid ja lausa mööda tehtud klikke!
-//lisada ajavõtt (fikseerida algushetk, lõpuhetk,  getTime() annab ajahetke millisekundites ja sellest saab arvutada minutid, sekundid jms).
-//laske fantaasial lennata!
 
 window.onload = function(){
 	canvas = document.getElementById("canvas");
@@ -21,10 +18,10 @@ window.onload = function(){
 }
 
 function init_game(){
-	timer = setInterval(updateTimer, 1000);
-	updateTimer();
 	start_audio.play();
 	document.getElementById("score").innerHTML = "Score: " + hit_count;
+	timer = setInterval(updateTimer, 1000);
+	updateTimer();
 	add_elements();
 	canvas.addEventListener("mousedown", check_hits);
 	const button = document.querySelector('button');
@@ -32,10 +29,12 @@ function init_game(){
 }
 
 function reset_game(){
+	start_audio.play();
 	hit_count = 0;
 	document.getElementById("score").innerHTML = "Score: " + hit_count;
 	ball_list = [];
 	add_elements();
+	updateTimer();
 	canvas.addEventListener("mousedown", check_hits);
 }
 
@@ -82,6 +81,8 @@ function check_hits(e){
 				if(hit_count == 10){
 					document.getElementById("score").innerHTML = "You won! Good job!";
 					win_audio.play();
+				}else{
+					clearTimeout(tick);
 				}
 				break;
 			}
@@ -163,12 +164,10 @@ function move_1(){
 	requestAnimationFrame(move_1);
 }
 
-function updateTimer(){
-	time_left -= 1;
-	if(time_left >= 0)
-	  document.getElementById("timer").innerHTML = "You have: " + time_left + " seconds left";
-	else {
-		cancelInterval(timer);
-		document.getElementById("score").innerHTML = "Game over! Try again!";
-		lost_audio.play();	}
+function updateTimer() {
+  timeLeft = timeLeft - 1;
+  if(timeLeft >= 0 && hit_count < 10){
+  var timer = document.getElementById("time");
+  timer.innerHTML = timeLeft;
+  }
 }
