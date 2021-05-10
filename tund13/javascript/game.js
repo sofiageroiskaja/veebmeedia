@@ -33,8 +33,8 @@ function reset_game(){
 	hit_count = 0;
 	document.getElementById("score").innerHTML = "Score: " + hit_count;
 	ball_list = [];
-	add_elements();
 	updateTimer();
+	add_elements();
 	canvas.addEventListener("mousedown", check_hits);
 }
 
