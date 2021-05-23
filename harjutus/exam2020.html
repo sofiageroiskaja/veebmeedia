@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Veeb- ja meediaelemendid, eksam 2020</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="design2020.css">
+	<script src="exam.js" defer></script>
+</head>
+<body>
+	<div id="page" class="main-grid">
+		<div id="author-info" class="grid-item namearea grid-content">
+		<h1>Sofia Geroiskaja</h1>
+		<p>Sooritab parasjagu veebi- ja meediaelementide kursuse eksamit. Ülesandeks on kasutades css3 grid-omadusi paigutada sisu nelja veergu ja kolme ritta. Lisaks on vaja javascriptiga pisut mängida.</p>
+		<p>Käes on 11. mai aastal 2021.</p>
+		</div>
+		
+		<div id="main-content">
+			<div class="cubecontainer">
+				<div id="cube" class="cube">
+					<div class="front hide"><p>Esikülg</p><p id="front"></p></div><div class="front frontcover"></div>
+					<div class="back hide"><p>Tagakülg</p><p id="back"></p></div><div class="back backcover"></div>
+					<div class="top hide"><p>Pealmine külg</p></div><div class="top topcover"></div>
+					<div class="bottom hide"><p>Alumine külg</p></div><div class="bottom bottomcover"></div>
+					<div class="left hide"><p>Vasak külg</p><p id="left"></p></div><div class="left leftcover"></div>
+					<div class="right hide"><p>Parem külg</p><p id="right"></p></div><div class="right rightcover"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="main-content2" class="grid-item contentarea2 grid-content">
+			<h2>Hinnang kursusele</h2>
+			<p>Siit saab lugeda, mida üliõpilane kogu kursuse kohta arvas.</p>
+			<ul>
+				<li>Mulle kõige rohkem meeldisid teemad animatsioon ja joonistamine
+				<ul>
+					<li>Huvitav</li>
+					<li>Loovtöö</li>
+					<li>Ilus</li>
+				</ul>
+				</li>
+				<li>Polnud sellist teemat mis mulle ei meeldiks, sest
+				<ul>
+					<li>Kõik oli huvitav</li>
+					<li>Kõik oli kasulik</li>
+					<li>Õppejõud rääkis arusaadavalt ja huvitavalt</li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+
+		<nav id="menu" class="grid-item menuarea grid-content">
+			<p><a href="../tund4/index.html">Kell</a></p>
+			<p><a href="../tund6/index.html">Teine Animatsioon</a></p>
+			<p><a href="../tund8/index.html">Äratuskell</a></p>
+		</nav>
+
+		<div id="indicator-bottom-right" class="grid-item indicatorarea-bottom-right">
+			<img src="comp_5.png" alt="arvuti number">
+		</div>
+
+		<div id="indicator-top" class="grid-item indicatorarea-top">
+			<img src="comp_11.png" alt="tänane kuupäev">
+		</div>
+
+		<div id="indicator-bottom-left" class="grid-item indicatorarea-bottom-left">
+			<img src="comp_29.png" alt="arvuti number">
+		</div>
+
+		<div id="banner-bottom" class="grid-item banner-bottom grid-content">
+			<img src="bottom_banner.png" alt="valmis" class="center">
+		</div>
+	</div>
+</body>
+</html>
